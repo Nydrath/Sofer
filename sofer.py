@@ -56,8 +56,7 @@ class Sofer(pydle.Client):
             else:
                 self.message(nick, "{0} is not in the database".format(hostname))
             for potentialhost in data.keys():
-                crop = potentialhost[potentialhost.index(".")+1:]
-                if crop in message and potentialhost != hostname:
+                if message in potentialhost and potentialhost != hostname:
                     self.message(nick, "{0} has a similar ip, using the names {1}".format(potentialhost, listjoin(data[potentialhost])))
 
 
